@@ -13,12 +13,10 @@ func main() {
 		go race(i, m, wg)
 	}
 	wg.Wait()
-	for k, v := range m {
-		fmt.Println(k, v)
-	}
+	fmt.Println("DONE! - ALL Clear")
 }
 
 func race(i int, m map[int]int, wg *sync.WaitGroup) {
+	defer wg.Done()
 	m[i] = i
-	wg.Done()
 }
