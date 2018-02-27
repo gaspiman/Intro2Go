@@ -9,3 +9,6 @@ func main() {
 	//	race_fixed()
 	server()
 }
+
+// Cross compiling:
+// GOOS=windows GOARCH=amd64 go build ./...
