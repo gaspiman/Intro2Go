@@ -8,7 +8,7 @@ import (
 	"time"
 )
 
-func main() {
+func syncFunc() {
 	start := time.Now()
 	list := []string{
 		"http://cnn.com",
@@ -83,14 +83,14 @@ func main() {
 	wg := new(sync.WaitGroup)
 	for _, url := range list {
 		wg.Add(1)
-		go getURL(url, wg)
+		go sync_getURL(url, wg)
 	}
 	wg.Wait()
 	elapsed := time.Since(start)
 	log.Println("\n===================================\n Completed in:", elapsed, "\n===================================\n")
 }
 
-func getURL(url string, wg *sync.WaitGroup) {
+func sync_getURL(url string, wg *sync.WaitGroup) {
 	defer wg.Done()
 	a, err := http.Get(url)
 	if err != nil {

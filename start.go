@@ -7,7 +7,7 @@ import (
 	"time"
 )
 
-func main() {
+func simple() {
 	start := time.Now()
 	list := []string{
 		"http://cnn.com",
