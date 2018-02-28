@@ -10,9 +10,12 @@ func BenchmarkFib10(b *testing.B) {
 	}
 }
 
-func TestFib10(t *testing.T) {
-	expected := []int{100, 200, 300, 400, 500, 2000}
-	inputs := []int{1, 2, 3, 4, 5, 20}
+func TestFib10_Fail(t *testing.T) {
+	//expected := []int{100, 200, 300, 400, 500, 6765}
+	//inputs := []int{1, 2, 3, 4, 5, 20}
+	expected := []int{6765}
+	inputs := []int{20}
+
 	for k, exp := range expected {
 		result := Fib(inputs[k])
 		if result != exp {
