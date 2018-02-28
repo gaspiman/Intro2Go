@@ -16,7 +16,7 @@ func TestFib10(t *testing.T) {
 	for k, exp := range expected {
 		result := Fib(inputs[k])
 		if result != exp {
-			t.Errorf("Something is wrong expected %d received %d", expected, result)
+			t.Errorf("Something is wrong expected %d received %d", exp, result)
 		}
 	}
 }
